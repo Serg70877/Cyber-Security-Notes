@@ -13,6 +13,10 @@ These ports are associated with file sharing (SMB) and SQL Server
 - Use smbclient to show available shares and access them
 - E.g. smbclient //127.0.0.1/SHARE$
 
+## Database
+### Accessing Microsoft SQL Server
+- pymssql can be used to connect to Microsoft SQL Servers.
+
 ## Useful URLS
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://github.com/undergroundwires/CEH-in-bullet-points
