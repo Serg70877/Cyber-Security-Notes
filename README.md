@@ -15,3 +15,4 @@ These ports are associated with file sharing (SMB) and SQL Server
 
 ## Useful URLS
 - https://github.com/swisskyrepo/PayloadsAllTheThings
+- https://github.com/undergroundwires/CEH-in-bullet-points
