@@ -16,6 +16,7 @@ These ports are associated with file sharing (SMB) and SQL Server
 ## Database
 ### Accessing Microsoft SQL Server
 - pymssql can be used to connect to Microsoft SQL Servers.
+- Goal is to use xp_cmdshell to gain RCE.
 
 ## Useful URLS
 - https://github.com/swisskyrepo/PayloadsAllTheThings
