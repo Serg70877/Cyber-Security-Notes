@@ -2,6 +2,7 @@
 
 ## Brute Forcing
 ### Tools
+#### Z3
 - Z3 is a theorem prover from Microsoft Research that makes it very easy to brute force questions by specifing rules.
 
 ## Vulnerability Scanning
