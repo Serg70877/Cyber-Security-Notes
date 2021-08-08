@@ -4,6 +4,7 @@
 ### Tools
 #### Z3
 - Z3 is a theorem prover from Microsoft Research that makes it very easy to brute force questions by specifing rules.
+- Can be accessed through Python bindings.
 
 ## Vulnerability Scanning
 ### Ports 445 and 143
