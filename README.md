@@ -12,3 +12,6 @@ These ports are associated with file sharing (SMB) and SQL Server
 - Sensitive info tend to be stored in these areas
 - Use smbclient to show available shares and access them
 - E.g. smbclient //127.0.0.1/SHARE$
+
+## Useful URLS
+- https://github.com/swisskyrepo/PayloadsAllTheThings
