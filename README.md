@@ -1,5 +1,7 @@
 # Cyber Security Notes
 
+## Installed Tools
+
 ## Brute Forcing
 ### Tools
 #### Z3
