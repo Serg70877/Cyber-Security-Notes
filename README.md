@@ -6,6 +6,7 @@
 - smbclient
 - Sublime Text
 - redis-tools
+- gobuster
 
 ## Brute Forcing
 ### Tools
