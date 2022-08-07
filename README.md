@@ -1,5 +1,13 @@
 # Cyber Security Notes
 
+## Installed Tools
+- OpenVPN
+- nmap
+- smbclient
+- Sublime Text
+- redis-tools
+- gobuster
+
 ## Brute Forcing
 ### Tools
 #### Z3
