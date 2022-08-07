@@ -2,6 +2,8 @@
 
 ## Installed Tools
 - OpenVPN
+- nmap
+- Sublime Text
 
 ## Brute Forcing
 ### Tools
@@ -10,6 +12,16 @@
 - Can be accessed through Python bindings.
 
 ## Vulnerability Scanning
+### Port 21
+Usually associated with ftp
+- anonymous can occasionally be logged into without a password
+- Use telnet command
+
+### Port 21
+Usually associated with telnet
+- root can occasionally be logged into without a password
+- Use ftp command
+
 ### Ports 445 and 143
 These ports are associated with file sharing (SMB) and SQL Server
 - Sensitive info tend to be stored in these areas
