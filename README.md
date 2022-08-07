@@ -5,6 +5,7 @@
 - nmap
 - smbclient
 - Sublime Text
+- redis-tools
 
 ## Brute Forcing
 ### Tools
@@ -29,6 +30,13 @@ These ports are associated with file sharing (SMB) and SQL Server
 - Use smbclient to show available shares with -L and access them
 - WorkShares can occasionally be logged into without a password
 - E.g. smbclient //127.0.0.1/SHARE$
+
+### Port 6379
+Usually associated with redis
+- Accessed using redis-cli
+- redis is an in-memory database
+- Use info to list all databases, then use select `id` to select a database by its id
+- Use keys * to get all keys, then get `keyname` to get the corresponding value
 
 ## Database
 ### Accessing Microsoft SQL Server
