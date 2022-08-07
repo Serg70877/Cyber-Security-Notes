@@ -47,3 +47,4 @@ Usually associated with redis
 ## Useful URLS
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://github.com/undergroundwires/CEH-in-bullet-points
+- https://github.com/JohnHammond/ctf-katana
