@@ -8,7 +8,9 @@
 - redis-tools
 - gobuster
 - mysql
-- kali wordlists
+- wordlists from SecLists and naive hashcat
+  - directory-list-2.3-medium.txt
+  - rockyou.txt
 - john the ripper
 - responder
 
