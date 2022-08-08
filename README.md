@@ -1,18 +1,7 @@
 # Cyber Security Notes
 
 ## Installed Tools
-- OpenVPN
-- nmap
-- smbclient
-- Sublime Text
-- redis-tools
-- gobuster
-- mysql
-- wordlists from SecLists and naive hashcat
-  - directory-list-2.3-medium.txt
-  - rockyou.txt
-- john the ripper
-- responder
+- evil-winrm
 
 ## Brute Forcing
 ### Tools
