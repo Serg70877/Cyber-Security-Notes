@@ -26,10 +26,23 @@
 
 ## Post Exploitation
 ### Spawning a Stable Shell
-#### Python
+First, run the following on the target machine
 ```python
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
+
+On our host machine, we will then run
+```bash
+stty raw -echo
+```
+The dash means "disable" a setting, so -echo disables echoing. The raw setting means that the input and output is not processed, just sent straight through. So with stty raw you can't hit Ctrl-C to end a process, for example. This helps to make the shell more stable.
+
+Finally, on our target machine we will run
+```bash
+export TERM=xterm
+```
+This will set the terminal emulator to the Ubuntu (maybe linux?) default of xterm.
+From here on out, we should have successfully spawned a stable shell.
 
 ## Brute Forcing
 ### Tools
