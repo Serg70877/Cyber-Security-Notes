@@ -7,6 +7,7 @@
 - Sublime Text
 - redis-tools
 - gobuster
+- mysql
 
 ## Brute Forcing
 ### Tools
@@ -16,14 +17,11 @@
 
 ## Vulnerability Scanning
 ### Port 21
-Usually associated with ftp
-- anonymous can occasionally be logged into without a password
-- Use telnet command
-
-### Port 21
-Usually associated with telnet
-- root can occasionally be logged into without a password
-- Use ftp command
+#### FTP
+- Use ftp
+- FTP code 230 will be returned in nmap scan if anonymous login is allowed
+#### Telnet
+- Use telnet
 
 ### Ports 445 and 143
 These ports are associated with file sharing (SMB) and SQL Server
