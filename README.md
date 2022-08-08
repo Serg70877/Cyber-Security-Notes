@@ -1,6 +1,6 @@
 # Cyber Security Notes
 
-## Installed Tools
+## Tools
 - OpenVPN
 - nmap
 - smbclient
