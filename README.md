@@ -24,6 +24,13 @@
 ?>
 ```
 
+## Post Exploitation
+### Spawning a Stable Shell
+#### Python
+```python
+python -c 'import pty; pty.spawn("/bin/bash")'
+```
+
 ## Brute Forcing
 ### Tools
 #### Z3
