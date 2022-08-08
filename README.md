@@ -43,7 +43,7 @@ Finally, on our target machine we will run
 ```bash
 export TERM=xterm
 ```
-This will set the terminal emulator to the Ubuntu (maybe linux?) default of xterm.
+This will set the terminal emulator to the Ubuntu default of xterm.
 From here on out, we should have successfully spawned a stable shell.
 
 ## Brute Forcing
