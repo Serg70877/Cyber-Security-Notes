@@ -8,6 +8,8 @@
 - redis-tools
 - gobuster
 - mysql
+- kali wordlists
+- john the ripper
 
 ## Brute Forcing
 ### Tools
