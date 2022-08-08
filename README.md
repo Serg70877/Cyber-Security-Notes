@@ -27,6 +27,7 @@
 ## Post Exploitation
 ### Spawning a Stable Shell
 > This requires that you already have a reverse shell on the target machine
+
 First, run the following on the target machine
 ```python
 python -c 'import pty; pty.spawn("/bin/bash")'
