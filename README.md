@@ -18,7 +18,7 @@
 ## Vulnerability Scanning
 ### Port 21
 #### FTP
-- Use ftp
+- Use ftp (get to grab files)
 - FTP code 230 will be returned in nmap scan if anonymous login is allowed
 #### Telnet
 - Use telnet
