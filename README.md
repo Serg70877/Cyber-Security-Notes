@@ -10,6 +10,7 @@
 - mysql
 - kali wordlists
 - john the ripper
+- responder
 
 ## Brute Forcing
 ### Tools
