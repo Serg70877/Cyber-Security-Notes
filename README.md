@@ -178,6 +178,15 @@ If the current user is part of the ```LAPS_Readers``` group we can use it to rea
 Get-ADComputer -Filter * -Properties ms-Mcs-AdmPwd
 ```
 
+### LSAS.exe (Local Security Authority Subsystem Service)
+**Note:** You must have enough permissions to dump LSAS.exe and Credential Guard **cannot** be running.
+Check if Credential Guard is running
+```powershell
+$DevGuard = Get-CimInstance –ClassName Win32_DeviceGuard –Namespace root\Microsoft\Windows\DeviceGuard
+if ($DevGuard.SecurityServicesConfigured -contains 1) {"Credential Guard configured"}
+if ($DevGuard.SecurityServicesRunning -contains 1) {"Credential Guard running"}
+```
+
 ## Useful URLS
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://github.com/undergroundwires/CEH-in-bullet-points
