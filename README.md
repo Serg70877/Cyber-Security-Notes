@@ -131,11 +131,17 @@ Occasionally there will be binaries being run on the target machine with the SUI
 find / -perm -u=s -type f 2>/dev/null
 ```
 
-find: a Linux command to search for files in a directory hierarchy
+- find: a Linux command to search for files in a directory hierarchy
 - perm: is used to define the permissions to search for
 - u=s: search for files with the SUID permission
 - type f: search for regular file
 - 2>dev/null: errors will be deleted automatically
+
+#### Abusing SUID Binaries
+We can use strings on the binary to see what other binaries it runs, then replace those binaries with our own which will then be run with elevated permissions.
+For example, lets pretend that our binary has the line ```cat stuff```.
+We can then create our own "cat" with ```echo "/bin/sh" > cat``` and mark it as executable with ```chmod +x cat```.
+Finally, we can modify our path with ```export PATH=YOUR_PATH_HERE:$PATH```, which will cause the binary to look in our path for a cat executable first, thus running our malicious cat instead of the original one and giving us a shell with elevated permissions.
 
 ## Useful URLS
 - https://github.com/swisskyrepo/PayloadsAllTheThings
