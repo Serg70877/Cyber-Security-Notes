@@ -67,6 +67,11 @@ These ports are associated with file sharing (SMB) and SQL Server
 - WorkShares can occasionally be logged into without a password
 - E.g. smbclient //127.0.0.1/SHARE$
 
+List shares
+```bash
+smbclient -N -L //127.0.0.1/
+```
+
 ### Port 6379
 Usually associated with redis
 - Accessed using redis-cli
