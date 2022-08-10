@@ -75,6 +75,8 @@ Usually associated with redis
 ```
 
 ### Reverse Shells
+> A PHP reverse shell script can be found in usr/share/webshells/php/php-reverse-shell.php
+
 #### Simple Reverse Shell
 The simplest way to get a reverse shell on the target machine is using netcat. First, we need to make sure that the target's machine has it installed. If not, we can drop a nc.exe binary on our target machine using ```wget```. For windows machines, this binary can be found in ```usr/share/windows-binaries```.
 
