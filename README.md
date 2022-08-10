@@ -74,7 +74,9 @@ smbclient -N -L //127.0.0.1/
 
 ### Port 1433
 Usually associated with SQL
+
 ```bash xp_cmdshell``` is an extended stored procedure of Microsoft SQL Server that can be used in order to spawn a Windows command shell.
+```python impacket-mssql``` can be used in order to establish an authenticated connection to a Microsoft SQL Server.
 
 ### Port 6379
 Usually associated with redis
