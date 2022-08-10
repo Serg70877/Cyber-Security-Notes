@@ -50,6 +50,14 @@ Usually associated with SQL
 
 ```impacket-mssqlclient``` can be used in order to establish an authenticated connection to a Microsoft SQL Server.
 
+### Port 5985
+Usually associated with Windows Remote Management (winrm).
+
+```evil-winrm``` can be used with user credentials to get a shell on the target machine. E.g.
+```bash
+evil-winrm -u administrator -p password123 -i $TARGET_IP
+```
+
 ### Port 6379
 Usually associated with redis
 - Accessed using redis-cli
