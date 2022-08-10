@@ -139,7 +139,7 @@ impacket-psexec administrator:password123@$TARGET_IP
 ```
 
 ### Common Web Server Setups
-> The code for the web server itself can be found in ```var/www```
+> The code for the web server itself can often be found in ```var/www```
 
 Often after successfully spawning a reverse shell on a web server we will find ourselves as the user ```www-data```, which is the user web servers use by default for normal operation.
 
