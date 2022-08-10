@@ -91,7 +91,6 @@ The simplest way to get a reverse shell on the target machine is using netcat. F
 
 ```-e cmd.exe``` means execute cmd.exe as it sends it back to us.
 
-## Post Exploitation
 ### Spawning a Stable Shell
 > This requires that you already have a reverse shell on the target machine
 
@@ -113,8 +112,8 @@ export TERM=xterm
 This will set the terminal emulator to the Ubuntu default of xterm.
 From here on out, we should have successfully spawned a stable shell.
 
-## Authentication with User Credentials
-### User Credentials and Writable SMB Shares
+### Authentication with User Credentials
+#### User Credentials and Writable SMB Shares
 We can use ```impacket-psexec``` as a way to exploit writable shares on samba to get a way to authenticate to the machine. E.g.
 ```bash
 impacket-psexec administrator:password123@$TARGET_IP
@@ -124,6 +123,19 @@ impacket-psexec administrator:password123@$TARGET_IP
 > The code for the web server itself can be found in ```var/www```
 
 Often after successfully spawning a reverse shell on a web server we will find ourselves as the user ```www-data```, which is the user web servers use by default for normal operation.
+
+## Privilege Escalation
+### SUID Binaries
+Occasionally there will be binaries being run on the target machine with the SUID bit. The following command can be used to search for such binaries.
+```bash
+find / -perm -u=s -type f 2>/dev/null
+```
+
+find: a Linux command to search for files in a directory hierarchy
+- perm: is used to define the permissions to search for
+- u=s: search for files with the SUID permission
+- type f: search for regular file
+- 2>dev/null: errors will be deleted automatically
 
 ## Useful URLS
 - https://github.com/swisskyrepo/PayloadsAllTheThings
