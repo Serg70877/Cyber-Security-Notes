@@ -105,7 +105,7 @@ From here on out, we should have successfully spawned a stable shell.
 ### User Credentials and Writable SMB Shares
 We can use ```impacket-psexec``` as a way to exploit writable shares on samba to get a way to authenticate to the machine. E.g.
 ```bash
-impacket-psxec administrator@$TARGET_IP
+impacket-psexec administrator@$TARGET_IP
 ```
 
 ## Useful URLS
