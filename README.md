@@ -68,7 +68,7 @@ Usually associated with redis
 
 ### Reverse Shells
 #### Simple Reverse Shell
-The simplest way to get a reverse shell on the target machine is using netcat. First, we need to make sure that the target's machine has nc installed. If not, we can drop a nc.exe binary on our target machine using ```wget```. For windows machines, this binary can be found in ```usr/share/windows-binaries```.
+The simplest way to get a reverse shell on the target machine is using netcat. First, we need to make sure that the target's machine has it installed. If not, we can drop a nc.exe binary on our target machine using ```wget```. For windows machines, this binary can be found in ```usr/share/windows-binaries```.
 
 ##### Getting our nc.exe binary on the target machine
 1. Start a http server on our machine in the same directory as our binary with ```python -m http.server 80```.
