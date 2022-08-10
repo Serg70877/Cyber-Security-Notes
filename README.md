@@ -60,8 +60,8 @@ From here on out, we should have successfully spawned a stable shell.
 #### Telnet
 - Use telnet
 
-### Ports 445 and 143
-These ports are associated with file sharing (SMB) and SQL Server
+### Ports 445
+Usually associated with file sharing (SMB)
 - Sensitive info tend to be stored in these areas
 - Use smbclient to show available shares and access them
 - WorkShares can occasionally be logged into without a password
@@ -71,6 +71,10 @@ List shares
 ```bash
 smbclient -N -L //127.0.0.1/
 ```
+
+### Port 1433
+Usually associated with SQL
+```bash xp_cmdshell``` is an extended stored procedure of Microsoft SQL Server that can be used in order to spawn a Windows command shell.
 
 ### Port 6379
 Usually associated with redis
