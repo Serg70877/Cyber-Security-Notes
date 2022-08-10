@@ -169,10 +169,11 @@ Finally, we can modify our path with ```export PATH=YOUR_PATH_HERE:$PATH```, whi
 Main goal is to gain access to the Local Administrator account on the Domain Controller.
 
 ```whoami /priv``` can be used to check user privileges.
+
 ```net user``` can be used to check group memberships.
 
 ### LAPS
-If the current user is part of the LAPS_Readers group we can use it to read and extract the Local Administrator password with
+If the current user is part of the ```LAPS_Readers group``` we can use it to read and extract the Local Administrator password with
 ```powershell
 Get-ADComputer -Filter * -Properties ms-Mcs-AdmPwd
 ```
