@@ -165,6 +165,18 @@ For example, lets pretend that our binary has the line ```cat stuff```.
 We can then create our own "cat" with ```echo "/bin/sh" > cat``` and mark it as executable with ```chmod +x cat```.
 Finally, we can modify our path with ```export PATH=YOUR_PATH_HERE:$PATH```, which will cause the binary to look in our path for a cat executable first, thus running our malicious cat instead of the original one and giving us a shell with elevated permissions.
 
+## Active Directory
+Main goal is to gain access to the Local Administrator account on the Domain Controller.
+
+```whoami /priv``` can be used to check user privileges.
+```net user``` can be used to check group memberships.
+
+### LAPS
+If the current user is part of the LAPS_Readers group we can use it to read and extract the Local Administrator password with
+```powershell
+Get-ADComputer -Filter * -Properties ms-Mcs-AdmPwd
+```
+
 ## Useful URLS
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://github.com/undergroundwires/CEH-in-bullet-points
