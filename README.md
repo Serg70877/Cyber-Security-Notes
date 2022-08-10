@@ -46,6 +46,7 @@ smbclient -N -L //127.0.0.1/
 Usually associated with SQL
 
 ```xp_cmdshell``` is an extended stored procedure of Microsoft SQL Server that can be used in order to spawn a Windows command shell.
+  - Can be used to run powershell with ```xp_cmdshell "powershell -c whoami"```
 ```impacket-mssqlclient``` can be used in order to establish an authenticated connection to a Microsoft SQL Server.
 
 ### Port 6379
