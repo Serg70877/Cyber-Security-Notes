@@ -14,6 +14,7 @@
 - john the ripper
 - responder
 - evil-winrm
+- peass
 
 ## Initial Access
 ### Simple PHP Payload
