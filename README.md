@@ -160,7 +160,7 @@ find / -perm -u=s -type f 2>/dev/null
 - 2>dev/null: errors will be deleted automatically
 
 #### Abusing SUID Binaries
-> You can also use ```bash -p``` to run bash while keeping elevated permissions
+> You can use ```bash -p``` to run bash while keeping elevated permissions
 
 We can use strings on the binary to see what other binaries it runs, then replace those binaries with our own which will then be run with elevated permissions.
 For example, lets pretend that our binary has the line ```cat stuff```.
