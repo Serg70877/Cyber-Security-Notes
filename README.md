@@ -200,3 +200,4 @@ procdump -ma lsass.exe lsass.dmp
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://github.com/undergroundwires/CEH-in-bullet-points
 - https://github.com/JohnHammond/ctf-katana
+- https://gtfobins.github.io/
