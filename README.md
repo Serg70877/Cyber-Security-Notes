@@ -113,16 +113,27 @@ Both of these will create a pipe /tmp/f and continuously read from it with cat. 
 ### Spawning a Stable Shell
 > This requires that you already have a reverse shell on the target machine
 
-First, run the following on the target machine
+First, spawn a bash shell on the target machine
 ```python
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
 
+```bash
+/usr/bin/script -qc /bin/bash /dev/null
+``
+
+Then, we will send our nc process to the background
+```bash
+bg
+```
+
 On our host machine, we will then run
 ```bash
-stty raw -echo
+stty raw -echo; fg
+reset
 ```
 The dash means "disable" a setting, so -echo disables echoing. The raw setting means that the input and output is not processed, just sent straight through. So with stty raw you can't hit Ctrl-C to end a process, for example. This helps to make the shell more stable.
+We then bring our nc process back to the foreground with ```fg```
 
 Finally, on our target machine we will run
 ```bash
