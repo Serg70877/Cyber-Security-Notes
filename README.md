@@ -123,10 +123,7 @@ python -c 'import pty; pty.spawn("/bin/bash")'
 /usr/bin/script -qc /bin/bash /dev/null
 ```
 
-Then, we will send our nc process to the background
-```bash
-bg
-```
+Then, we will send our nc process to the background with ```CTRL-Z```
 
 On our host machine, we will then run
 ```bash
