@@ -114,13 +114,14 @@ Both of these will create a pipe /tmp/f and continuously read from it with cat. 
 > This requires that you already have a reverse shell on the target machine
 
 First, spawn a bash shell on the target machine
+
 ```python
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
 
 ```bash
 /usr/bin/script -qc /bin/bash /dev/null
-``
+```
 
 Then, we will send our nc process to the background
 ```bash
