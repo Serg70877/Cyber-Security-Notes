@@ -171,6 +171,9 @@ find / -perm -u=s -type f 2>/dev/null
 #### Abusing SUID Binaries
 > You can use ```bash -p``` to run bash while keeping elevated permissions
 
+### Cron Jobs and Process
+Sometimes, root may run certain cron jobs or processes periodically. You can check running cron jobs with ```cat /etc/crontab``` or you can simply use ```pspy``` to spy on currently running cron jobs and processes, including the commands used to invoke them initially.
+
 We can use strings on the binary to see what other binaries it runs, then replace those binaries with our own which will then be run with elevated permissions.
 For example, lets pretend that our binary has the line ```cat stuff```.
 We can then create our own "cat" with ```echo "/bin/sh" > cat``` and mark it as executable with ```chmod +x cat```.
