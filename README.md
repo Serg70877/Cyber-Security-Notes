@@ -213,3 +213,4 @@ procdump -ma lsass.exe lsass.dmp
 - https://github.com/undergroundwires/CEH-in-bullet-points
 - https://github.com/JohnHammond/ctf-katana
 - https://gtfobins.github.io/
+- https://github.com/740i/pentest-notes/blob/master/windows-privesc.md
