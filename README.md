@@ -128,7 +128,6 @@ Then, we will send our nc process to the background with ```CTRL-Z```
 On our host machine, we will then run
 ```bash
 stty raw -echo; fg
-reset
 ```
 The dash means "disable" a setting, so -echo disables echoing. The raw setting means that the input and output is not processed, just sent straight through. So with stty raw you can't hit Ctrl-C to end a process, for example. This helps to make the shell more stable.
 We then bring our nc process back to the foreground with ```fg```
