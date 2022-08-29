@@ -16,6 +16,7 @@
 - evil-winrm
 - peass
 - bloodhound
+- kerbrute
 
 ## Brute Forcing
 ### Tools
