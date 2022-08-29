@@ -15,6 +15,7 @@
 - responder
 - evil-winrm
 - peass
+- bloodhound
 
 ## Brute Forcing
 ### Tools
