@@ -34,7 +34,15 @@
 
 ### Port 21
 #### SSH
-If the error `no matching host key type found. Their offer: ssh-dss` comes up, you can use `ssh -oHostKeyAlgorithms=+ssh-dss root@127.0.0.1`
+Sometimes when using SSH, the following error might pop up
+```bash
+no matching host key type found. Their offer: ssh-dss
+```
+
+It can be solved using
+```bash
+ssh -oHostKeyAlgorithms=+ssh-dss root@127.0.0.1
+```
 
 ### Ports 445
 Usually associated with file sharing (SMB)
