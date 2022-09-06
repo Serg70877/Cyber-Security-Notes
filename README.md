@@ -46,6 +46,7 @@ ssh -oHostKeyAlgorithms=+ssh-dss root@127.0.0.1
 
 SSH might deny your connection due to it only accepting authorized keys. If you have access to `.ssh/authorized_keys` in the target machine, you can add your own public key to it so your SSH connection will be allowed. You can generate your public key using the following command
 ```bash
+ssh-keygen
 cat ~/.ssh/id_rsa.pub
 ```
 
