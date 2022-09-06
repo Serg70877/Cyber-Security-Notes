@@ -39,6 +39,14 @@ Sometimes when using SSH, the following error might pop up
 no matching host key type found. Their offer: ssh-dss
 ```
 
+### Port 80
+#### Apache
+It can be useful take a look at the Apache log file if you are able to access it.
+It can be located in a bunch of different locations, the following command can be used to try and locate it.
+```bash
+find / -type d -name 'httpd' 2>/dev/null
+```
+
 It can be solved using
 ```bash
 ssh -oHostKeyAlgorithms=+ssh-dss root@127.0.0.1
