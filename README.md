@@ -44,18 +44,7 @@ It can be solved using
 ssh -oHostKeyAlgorithms=+ssh-dss root@127.0.0.1
 ```
 
-SSH might deny your connection due to it only accepting authorized keys. If you have access to `.ssh/authorized_keys` in the target machine, you can add your own public key to it so your SSH connection will be allowed. This also works as a SSH backdoor, so you can use this method to gain persistence on the target machine. You can generate your public key using the following command
-```bash
-ssh-keygen
-cat ~/.ssh/id_rsa.pub
-```
-
-Then, on the target machine append it to the file
-```bash
-echo "YOUR PUBLIC RSA KEY" >> authorized_keys
-```
-
-Then, you can SSH to the target machine from your host as usual and enter the passphrase you set.
+SSH might deny your connection due to it only accepting authorized keys. If you have access to `.ssh/authorized_keys` in the target machine, you can add your own public key to it so your SSH connection will be allowed. See Persistence Section.
 
 ### Port 80
 #### Apache
@@ -219,6 +208,21 @@ Finally, we can modify our path with ```export PATH=YOUR_PATH_HERE:$PATH```, whi
 
 ### Cron Jobs and Process
 Sometimes, root may run certain cron jobs or processes periodically. You can check running cron jobs with ```cat /etc/crontab``` or you can simply use ```pspy``` to spy on currently running cron jobs and processes, including the commands used to invoke them initially.
+
+## Persistence
+### SSH
+You can create a SSH backdoor to gain persistence on the target machine. First, generate a keypair using the following command, on either the target machine or attacker machine
+```bash
+ssh-keygen
+```
+
+Then, on the target machine append your public key to the authorized_keys file (you might have to create it if it doesn't exist)
+```bash
+echo "YOUR PUBLIC RSA KEY" >> authorized_keys
+```
+
+The public rsa key can be found from `.ssh/id_rsa.pub`.
+Finally, connect to the target machine with SSH (don't forget to `chmod 600 id_rsa`) and enter the passphrase you set.
 
 ## Useful URLS
 - https://github.com/swisskyrepo/PayloadsAllTheThings
