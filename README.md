@@ -65,7 +65,7 @@ It can be located in a bunch of different locations, the following command can b
 find / -type d -name 'httpd' 2>/dev/null
 ```
 
-Or, you can search the config file to find the exact location of the log file by looking for ErrorLog
+Or, you can search the config file to find the exact location of the log files
 ```bash
 /usr/local/etc/apache2/httpd.conf
 /etc/apache2/apache2.conf
