@@ -50,6 +50,13 @@ ssh-keygen
 cat ~/.ssh/id_rsa.pub
 ```
 
+Then, on the target machine append it to the file
+```bash
+echo "YOUR PUBLIC RSA KEY" >> authorized_keys
+```
+
+Then, you can SSH to the target machine from your host as usual and enter the passphrase you set.
+
 ### Port 80
 #### Apache
 It can be useful take a look at the Apache log file if you are able to access it.
