@@ -222,7 +222,8 @@ echo "YOUR PUBLIC RSA KEY" >> authorized_keys
 ```
 
 The public rsa key can be found from `.ssh/id_rsa.pub`.
-Finally, connect to the target machine with SSH (don't forget to `chmod 600 id_rsa`) and enter the passphrase you set.
+
+Connect to the target machine with SSH (don't forget to `chmod 600 id_rsa`) and enter the passphrase you set.
 
 ## Useful URLS
 - https://github.com/swisskyrepo/PayloadsAllTheThings
