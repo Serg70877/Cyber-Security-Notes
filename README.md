@@ -17,6 +17,7 @@
 - peass
 - bloodhound
 - kerbrute
+- oletools
 
 ## Brute Forcing
 ### Tools
