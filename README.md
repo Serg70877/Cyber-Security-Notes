@@ -213,7 +213,7 @@ Sometimes, root may run certain cron jobs or processes periodically. You can che
 ### Wildcard Injection
 Commands using wildcards (*) are **dangerous**.
 
-When a command is run with a wildcard in Unix, all filenames in the current directory will be passed in as arguments on the command line, exactly the same as the following line
+When a command is run with a wildcard in Unix, all filenames in the current directory will be passed in as arguments on the command line
 
 ```
 [user@defensecode WILD]$ rm DIR1 DIR2 DIR3 file1.txt file2.txt file3.txt
@@ -225,7 +225,7 @@ If there is a file that starts with a hyphen (-), it will then be intepreted as 
 [user@defensecode WILD]$ rm DIR1 DIR2 DIR3 file1.txt -rf file2.txt file3.txt
 ```
 
-This can be easily abused in programs like tar.
+This can be easily abused in programs like tar to privilege escalate.
 
 Taken from https://www.exploit-db.com/papers/33930
 
