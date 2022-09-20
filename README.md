@@ -210,6 +210,25 @@ Finally, we can modify our path with ```export PATH=YOUR_PATH_HERE:$PATH```, whi
 ### Cron Jobs and Process
 Sometimes, root may run certain cron jobs or processes periodically. You can check running cron jobs with ```cat /etc/crontab``` or you can simply use ```pspy``` to spy on currently running cron jobs and processes, including the commands used to invoke them initially.
 
+### Wildcard Injection
+Commands using wildcards (*) are **dangerous**.
+
+When a command is run with a wildcard in Unix, all filenames in the current directory will be passed in as arguments on the command line, exactly the same as the following line
+
+```
+[user@defensecode WILD]$ rm DIR1 DIR2 DIR3 file1.txt file2.txt file3.txt
+```
+
+If there is a file that starts with a hyphen (-), it will then be intepreted as a command-line argument.
+
+```
+[user@defensecode WILD]$ rm DIR1 DIR2 DIR3 file1.txt -rf file2.txt file3.txt
+```
+
+This can be easily abused in programs like tar.
+
+Taken from https://www.exploit-db.com/papers/33930
+
 ## Persistence
 ### SSH
 You can create a SSH backdoor to gain persistence on the target machine. First, generate a keypair using the following command, on either the target machine or attacker machine
