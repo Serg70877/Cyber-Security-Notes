@@ -219,7 +219,7 @@ When a command is run with a wildcard in Unix, all filenames in the current dire
 [user@defensecode WILD]$ rm DIR1 DIR2 DIR3 file1.txt file2.txt file3.txt
 ```
 
-If there is a file that starts with a hyphen (-), it will then be intepreted as a command-line argument.
+If there is a file that starts with a hyphen (-), it will then be intepreted as a command-line argument. In this case, there is a file called "-rf".
 
 ```
 [user@defensecode WILD]$ rm DIR1 DIR2 DIR3 file1.txt -rf file2.txt file3.txt
