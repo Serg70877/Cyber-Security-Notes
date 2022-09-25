@@ -261,3 +261,4 @@ Connect to the target machine with SSH (don't forget to `chmod 600 id_rsa`) and 
 - https://github.com/JohnHammond/ctf-katana
 - https://gtfobins.github.io/
 - https://github.com/740i/pentest-notes/blob/master/windows-privesc.md
+- https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet
