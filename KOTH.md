@@ -11,6 +11,9 @@ chattr +i /root/king.txt
 This is used by many players to make that king file immutable and hence persisting their name in that file.
 To get the upper hand in game, use another bit, 'append-able' on king.txt. This bit makes the file append-able only, and since most of the players 'write' in the file and not append, hence they can't modify the file even though they removed the immutable bit.
 
+Now almost always whoever uses the chattr binary first, either deletes it (foolish move) or hides it somewhere.
+Once that's done, you don't have much choice but to either upload your binary or hope that no one deleted busybox from the machine.
+
 ### clobber
 Now, this is a tricky bit, here, you can set the environment variable setting of root user to prevent overwriting in the files.
 Hence, the word clobber, This means that the user cannot add anything to any file using > operator.
