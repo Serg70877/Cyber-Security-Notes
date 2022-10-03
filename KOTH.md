@@ -37,3 +37,6 @@ cat /dev/urandom > /dev/pts/$PTS
 ```bash
 kill -9 $PID
 ```
+
+
+Taken from https://tryhackme.com/resources/blog/guide-to-king-of-the-hill
