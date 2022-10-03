@@ -23,7 +23,7 @@ Basic command is `set -o noclobber`
 But this will only be effective in current shell, so to make it persistent across entire machine, add this to bashrc of root and source that.
 
 ### Cron
-You can add your username automatically by putting the following line into `/etc/crontab`
+You can add your username automatically every minute by putting the following line into `/etc/crontab`
 ```bash
 * * * * * echo "[usernameHere]" > /root/king.txt >/dev/null 2>&1
 ```
