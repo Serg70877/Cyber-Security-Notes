@@ -1,7 +1,6 @@
 # King Of The Hill
 
 ## Owning king.txt file
-
 ### chattr
 If you give the manual page of chattr binary a read, you'll see that it can set immutable flags on files. That means, even root cannot make mutations in the file without removing that immutable bit.
 
@@ -19,3 +18,17 @@ Hence, the word clobber, This means that the user cannot add anything to any fil
 Basic command is `set -o noclobber`
 
 But this will only be effective in current shell, so to make it persistent across entire machine, add this to bashrc of root and source that.
+
+## Persistence
+### SSH AuthKey
+You can always put your ssh keys on to the user/root authorized_keys. So you can always ssh in using them.
+
+> You can use ssh -t to hide your session from tty.
+
+## Defending
+
+### Killing Processes
+You can use different commands like `w`, `who`, `ps aux | grep pts` to see who else is on the system so far.
+
+`cat /dev/urandom > /dev/pts/$PTS`
+`kill -9 $PID`
