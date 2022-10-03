@@ -30,5 +30,10 @@ You can always put your ssh keys on to the user/root authorized_keys. So you can
 ### Killing Processes
 You can use different commands like `w`, `who`, `ps aux | grep pts` to see who else is on the system so far.
 
-`cat /dev/urandom > /dev/pts/$PTS`
-`kill -9 $PID`
+```bash
+cat /dev/urandom > /dev/pts/$PTS
+```
+
+```bash
+kill -9 $PID
+```
