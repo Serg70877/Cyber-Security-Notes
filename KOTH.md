@@ -15,7 +15,7 @@ Now almost always whoever uses the chattr binary first, either deletes it (fooli
 Once that's done, you don't have much choice but to either upload your binary or hope that no one deleted busybox from the machine.
 
 ```bash
-busybox add chattr
+busybox chattr
 ```
 
 ### clobber
