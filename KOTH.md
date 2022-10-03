@@ -45,7 +45,7 @@ kill -9 $PID
 ```
 
 ### Removing Persistence
-- Comment out `/etc/password` if they set up persistence
+- Comment out `/etc/password`
 - Remove authorized_keys in `.ssh` folder
 
 Taken from https://tryhackme.com/resources/blog/guide-to-king-of-the-hill
