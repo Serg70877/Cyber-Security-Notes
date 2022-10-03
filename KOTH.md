@@ -39,7 +39,7 @@ done
 
 ## Persistence
 ### SSH AuthKey
-You can put your ssh keys in user/root authorized_keys, so you can always ssh in using them.
+You can put your ssh keys in user/root `authorized_keys`, so you can always ssh in using them.
 
 > You can use ssh -t to hide your session from tty.
 
