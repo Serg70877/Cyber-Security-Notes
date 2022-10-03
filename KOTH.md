@@ -22,6 +22,9 @@ Basic command is `set -o noclobber`
 
 But this will only be effective in current shell, so to make it persistent across entire machine, add this to bashrc of root and source that.
 
+### Cron
+Script/Cron to echo username to king.txt
+
 ## Persistence
 ### SSH AuthKey
 You can always put your ssh keys on to the user/root authorized_keys. So you can always ssh in using them.
@@ -41,5 +44,8 @@ cat /dev/urandom > /dev/pts/$PTS
 kill -9 $PID
 ```
 
+### Removing Persistence
+- Comment out `/etc/password` if they set up persistence
+- Remove authorized_keys in `.ssh` folder
 
 Taken from https://tryhackme.com/resources/blog/guide-to-king-of-the-hill
