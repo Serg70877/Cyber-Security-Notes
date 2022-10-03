@@ -51,16 +51,35 @@ Then, you can add the following line into `/etc/sudoers` to give unlimited permi
 ```
 
 ## Defending
-
-### Killing Processes
 You can use different commands like `w`, `who`, `ps aux | grep pts` to see who else is on the system so far.
 
+### Killing Processes
 ```bash
 cat /dev/urandom > /dev/pts/$PTS
 ```
 
 ```bash
 kill -9 $PID
+```
+
+### Hijacking Terminal
+```bash
+script /dev/pts/$PTS
+```
+
+### Capture PTS Output
+Get the process ID of the PTS with
+```bash
+ps -t pts/$PTS
+```
+
+```bash
+sudo strace -e write=0,1,2 -e trace=write -s1000 -fp $PID 2>&1 \
+| grep --line-buffered -o '".\+[^"]"' \
+| grep --line-buffered -o '[^"]\+[^"]' \
+| while read -r line; do
+    printf "%b" $line;
+done
 ```
 
 ### Removing Persistence
