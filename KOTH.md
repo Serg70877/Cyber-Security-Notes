@@ -43,6 +43,13 @@ You can always put your ssh keys on to the user/root authorized_keys. So you can
 
 > You can use ssh -t to hide your session from tty.
 
+# adduser
+You can use the command `adduser` to add a new user.
+Then, you can add the following line into `/etc/sudoers` to give unlimited permissions.
+```bash
+[usernameHere]  ALL=(ALL:ALL) NOPASSWD:ALL
+```
+
 ## Defending
 
 ### Killing Processes
