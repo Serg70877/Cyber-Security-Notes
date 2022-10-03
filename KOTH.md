@@ -31,7 +31,7 @@ You can add your username automatically every minute by putting the following li
 ### while loop
 ```bash
 #!/bin/bash
-while read myline
+while :
 do
     echo "[usernameHere]" > /root/king.txt
 done
