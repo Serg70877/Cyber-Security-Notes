@@ -14,6 +14,10 @@ To get the upper hand in game, use another bit, 'append-able' on king.txt. This 
 Now almost always whoever uses the chattr binary first, either deletes it (foolish move) or hides it somewhere.
 Once that's done, you don't have much choice but to either upload your binary or hope that no one deleted busybox from the machine.
 
+```bash
+busybox add chattr
+```
+
 ### clobber
 Now, this is a tricky bit, here, you can set the environment variable setting of root user to prevent overwriting in the files.
 Hence, the word clobber, This means that the user cannot add anything to any file using > operator.
