@@ -33,7 +33,7 @@
 #### Telnet
 - Use telnet
 
-### Port 21
+### Port 22
 #### SSH
 Sometimes when using SSH, the following error might pop up
 ```bash
